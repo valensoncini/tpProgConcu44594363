@@ -25,13 +25,13 @@ public class BitonicSort {
 	 
 	public void bitonicMerge(int a[], int low, int cnt, int dir)
 	    {
-		// Fusión bitónica: ordena el subarreglo [low..low+cnt) en la dirección dir
+		// Fusiï¿½n bitï¿½nica: ordena el subarreglo [low..low+cnt) en la direcciï¿½n dir
 	        if (cnt > 1) {
 	            int k = cnt / 2;
 	         // Compara y mezcla parejas de elementos
 	            for (int i = low; i < low + k; i++)
 	                compAndSwap(a, i, i + k, dir);
-	         // Recursión en cada mitad
+	         // Recursiï¿½n en cada mitad
 	            bitonicMerge(a, low, k, dir);
 	            bitonicMerge(a, low + k, k, dir);
 	        }
@@ -39,7 +39,7 @@ public class BitonicSort {
 	 
 	public void bitonicSort(int a[], int low, int cnt, int dir)
 	    {
-		// Ordenamiento bitónico: genera secuencia bitónica y la fusiona
+		// Ordenamiento bitï¿½nico: genera secuencia bitï¿½nica y la fusiona
 	        if (cnt > 1) {
 	            int k = cnt / 2;
 	            
@@ -49,7 +49,7 @@ public class BitonicSort {
 	            // Ordena mitad superior descendente
 	            bitonicSort(a, low + k, k, 0);
 
-	         // Fusión bitónica completa ascendente (dir=1)
+	         // Fusiï¿½n bitï¿½nica completa ascendente (dir=1)
 	            bitonicMerge(a, low, cnt, dir);
 	        }
 	    }
@@ -59,7 +59,15 @@ public class BitonicSort {
 	    {
 	        bitonicSort(a, 0, N, up);
 	    }
-	 
+	//funcion para que funcione con nÂº de elementos que no son potencia de 2
+		public int mayorPotencia2De(int n) {
+			int i = 1;
+			while(i<n && i>0) {
+				i = i*2;
+			}
+			
+			return i/2;
+		}
 
 
 }

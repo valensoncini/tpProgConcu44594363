@@ -22,7 +22,7 @@ public class BitonicSortCO extends BitonicSort{
 	            // Espera a que ambos hilos terminen
 	            t1.join(); 
 	            t2.join();
-	            // Realiza la fusión bitónica
+	            // Realiza la fusion bitonica
 	            bitonicMerge(a, low, cnt, dir);
 	        }
 	    }
